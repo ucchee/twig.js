@@ -352,9 +352,9 @@ module.exports = function (Twig) {
 
                 // Remove the quotes from the string
                 if (value.slice(0, 1) === '"') {
-                    value = value.replace('\\"', '"');
+                    value = value.replace(/\\"/g, '"');
                 } else {
-                    value = value.replace('\\\'', '\'');
+                    value = value.replace(/\\'/g, '\'');
                 }
 
                 token.value = value.slice(1, -1).replace(/\\n/g, '\n').replace(/\\r/g, '\r');
